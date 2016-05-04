@@ -13,9 +13,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="f/js/jquery-1.11.3.min.js"></script>
-    <script src="f/js/bootstrap.min.js"></script>
-    <script src="f/js/jquery.transit.min.js"></script>
-    <script src="f/js/bootstrap-tooltip.js"></script>
     <script src="f/js/jquery.flexslider-min.js"></script>
     <script src="f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
     <link rel="stylesheet" href="f/fancybox/jquery.fancybox.css?v=2.1.5" media="screen">
@@ -140,10 +137,10 @@
 			<div class="container">
   			<div class="header__holder">
   				<a href="/" class="logo">
-						<h1 class="logo__text">
+						<p class="logo__text">
 							CENTER
-							<p>Ваша недвижимость</p>
-						</h1>
+							<span>Ваша недвижимость</span>
+						</p>
 					</a>
 					<span class="phone"><span>(4852) 72 82 16</span> <a href="#" class="iconize-phone phone__btn"></a></span>
 					<ul class="header__menu">
@@ -217,10 +214,12 @@
 	  				<div class="switcher__holder switcher__holder_active" data-switch-hold="buy">
 	  					<div class="catalog__wrap">
   							<div class="catalog__menu">
-  								<div class="catalog__img">
-  									<img src="f/i/catalog-menu/1.png" alt="">
-  								</div>
-  								<a href="#" class="catalog__category">Вторичная <br>недвижимость</a>
+  								<a href="#" class="catalog__category">
+										<div class="catalog__img">
+											<img src="f/i/catalog-menu/1.png" alt="">
+										</div>
+  									<span>Вторичная <br>недвижимость</span>
+  								</a>
   								<ul>
   									<li><a href="#">Комнаты</a></li>
   									<li><a href="#">Однокомнатные</a></li>
@@ -230,10 +229,12 @@
   								</ul>
   							</div>
   							<div class="catalog__menu">
-  								<div class="catalog__img">
-  									<img src="f/i/catalog-menu/2.png" alt="">
-  								</div>
-  								<a href="#" class="catalog__category">Новостройки</a>
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/2.png" alt="">
+	  								</div>
+  									<span>Новостройки</span>
+  								</a>
   								<p class="catalog__caption">Районы в Ярославле</p>
   								<ul>
   									<li><a href="#">Кировский</a></li>
@@ -245,10 +246,12 @@
   								</ul>
   							</div>
   							<div class="catalog__menu">
-  								<div class="catalog__img">
-  									<img src="f/i/catalog-menu/4.png" alt="">
-  								</div>
-  								<a href="#" class="catalog__category">Коммерческая <br> недвижимость </a>
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/4.png" alt="">
+	  								</div>
+  									<span>Коммерческая <br> недвижимость</span>
+  								</a>
   								<ul>
   									<li><a href="#">Здание</a></li>
   									<li><a href="#">Офис</a></li>
@@ -259,10 +262,12 @@
   								</ul>
   							</div>
   							<div class="catalog__menu">
-  								<div class="catalog__img">
-  									<img src="f/i/catalog-menu/5.png" alt="">
-  								</div>
-  								<a href="#" class="catalog__category">Земельные участки </a>
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/5.png" alt="">
+	  								</div>
+	  								<span>Земельные участки</span>
+	  							</a>
   								<ul>
   									<li><a href="#">Поселения (ИЖС)</a></li>
   									<li><a href="#">Сельхозназначения (СНТ, ДНП)</a></li>
@@ -270,10 +275,12 @@
   								</ul>
   							</div>
   							<div class="catalog__menu">
-  								<div class="catalog__img">
-  									<img src="f/i/catalog-menu/3.png" alt="">
-  								</div>
-  								<a href="#" class="catalog__category">Элитная<br> недвижимость</a>
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/3.png" alt="">
+	  								</div>
+	  								<span>Элитная<br> недвижимость</span>
+	  							</a>
   								<ul>
   									<li><a href="#">Квартиры</a></li>
   									<li><a href="#">Коттеджи</a></li>
@@ -283,10 +290,12 @@
   								</ul>
   							</div>
   							<div class="catalog__menu">
-  								<div class="catalog__img">
-  									<img src="f/i/catalog-menu/6.png" alt="">
-  								</div>
-  								<a href="#" class="catalog__category">Дома, дачи <br>и коттеджи </a>
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/6.png" alt="">
+	  								</div>
+	  								<span>Дома, дачи <br>и коттеджи</span>
+	  							</a>
   								<ul>
   									<li><a href="#">Частные дома</a></li>
   									<li><a href="#">Дачи</a></li>
@@ -294,16 +303,20 @@
   								</ul>
   							</div>
   							<div class="catalog__menu">
-  								<div class="catalog__img">
-  									<img src="f/i/catalog-menu/7.png" alt="">
-  								</div>
-  								<a href="#" class="catalog__category">Коттеджные поселки</a>
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/7.png" alt="">
+	  								</div>
+	  								<span>Коттеджные поселки</span>
+	  							</a>
   							</div>
   							<div class="catalog__menu">
-  								<div class="catalog__img">
-  									<img src="f/i/catalog-menu/8.png" alt="">
-  								</div>
-  								<a href="#" class="catalog__category">Гаражи <br>и машиноместа</a>
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/8.png" alt="">
+	  								</div>
+	  								<span>Гаражи <br>и машиноместа</span>
+	  							</a>
   								<ul>
   									<li><a href="#">Гаражи</a></li>
   									<li><a href="#">Машиноместа</a></li>
@@ -312,7 +325,42 @@
 	  					</div>
 	  				</div>
   					<div class="switcher__holder" data-switch-hold="lease">
-  						2
+  						<div class="catalog__wrap">
+  							<div class="catalog__menu">
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/6.png" alt="">
+	  								</div>
+	  								<span>Дома, дачи <br>и коттеджи</span>
+	  							</a>
+  								<ul>
+  									<li><a href="#">Частные дома</a></li>
+  									<li><a href="#">Дачи</a></li>
+  									<li><a href="#">Таунхаусы</a></li>
+  								</ul>
+  							</div>
+  							<div class="catalog__menu">
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/7.png" alt="">
+	  								</div>
+	  								<span>Коттеджные поселки</span>
+	  							</a>
+  							</div>
+  							<div class="catalog__menu">
+  								<a href="#" class="catalog__category">
+	  								<div class="catalog__img">
+	  									<img src="f/i/catalog-menu/8.png" alt="">
+	  								</div>
+	  								<span>Гаражи <br>и машиноместа</span>
+	  							</a>
+  								<ul>
+  									<li><a href="#">Гаражи</a></li>
+  									<li><a href="#">Машиноместа</a></li>
+  								</ul>
+  							</div>
+	  					</div>
+  							
   					</div>
 	  				<div class="switcher__holder" data-switch-hold="sell">
 	  					3

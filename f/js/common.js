@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	$('[data-toggle="tooltip"]').tooltip(); 
 	$(".switcher__btn").click(function(){
 		$(this).closest(".switcher__control").find(".switcher__btn").removeClass("active");
 		$(this).addClass("active");

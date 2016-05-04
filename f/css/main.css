@@ -983,7 +983,7 @@ button.close {
   margin-right: auto;
   margin-left: auto;
   min-width: 992px;
-  max-width: 1600px;
+  max-width: 1400px;
 }
 @media (max-width: 1200px) {
   .container {
@@ -1899,10 +1899,15 @@ textarea {
   display: inline-block;
   vertical-align: middle;
   margin-left: 15px;
-  margin-right: -15px;
-  border: 5px solid transparent;
-  border-left-color: #000;
+  margin-right: -10px;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+  height: 8px;
   margin-top: -2px;
+  -ms-transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg);
+  width: 8px;
 }
 [class*=" icon-"],
 [class^=icon-] {
@@ -1979,7 +1984,7 @@ a:hover .icon-qst {
   height: 115px;
   margin-left: -50px;
   margin-top: -60px;
-  background-position: 0 -253px;
+  background-position: 0 -271px;
 }
 .icon-promo {
   width: 22px;
@@ -2325,10 +2330,12 @@ a:hover .icon-inteo {
   font: 30px/30px 'GothamPro-Medium';
   margin-bottom: 0;
 }
-.logo__text p {
+.logo__text span {
   font: 12px "Roboto", sans-serif;
   letter-spacing: 0;
   margin-bottom: 0;
+  margin-top: 5px;
+  display: block;
 }
 .phone {
   line-height: 120px;
@@ -2369,7 +2376,7 @@ a:hover .icon-inteo {
 }
 .switcher__control li {
   font: 14px/60px 'GothamPro-Bold';
-  padding: 0 55px;
+  padding: 0 45px;
   margin-bottom: 0;
   background: #fff;
   border: 1px solid #f5f5f5;
@@ -2377,6 +2384,7 @@ a:hover .icon-inteo {
   display: inline-block;
   vertical-align: top;
   text-transform: uppercase;
+  letter-spacing: .10em;
   z-index: 2;
   -webkit-transition: background-color 0.3s ease;
   -moz-transition: background-color 0.3s ease;
@@ -2388,7 +2396,14 @@ a:hover .icon-inteo {
   background: #ffd700;
   border-color: #ffd700;
 }
-.switcher__control li.active:after {
+.switcher__control li:before {
+  display: none;
+}
+.switcher__control_grey li {
+  background: #f5f5f5;
+  border: 1px solid #fff;
+}
+.switcher__control_grey li.active:after {
   content: '';
   position: absolute;
   top: 100%;
@@ -2398,13 +2413,6 @@ a:hover .icon-inteo {
   margin: 0 auto;
   border: 8px solid transparent;
   border-top-color: #ffd700;
-}
-.switcher__control li:before {
-  display: none;
-}
-.switcher__control_grey li {
-  background: #f5f5f5;
-  border: 1px solid #fff;
 }
 .switcher_active .switcher__control {
   padding-top: 0;
@@ -2427,11 +2435,6 @@ a:hover .icon-inteo {
   left: 0;
   right: 0;
   z-index: -1;
-  -webkit-transition: opacity 1s ease;
-  -moz-transition: opacity 1s ease;
-  -o-transition: opacity 1s ease;
-  -ms-transition: opacity 1s ease;
-  transition: opacity 1s ease;
 }
 .switcher__holder_active {
   position: relative;
@@ -2439,6 +2442,11 @@ a:hover .icon-inteo {
   left: auto;
   opacity: 1;
   z-index: 1;
+  -webkit-transition: opacity 0.8s ease;
+  -moz-transition: opacity 0.8s ease;
+  -o-transition: opacity 0.8s ease;
+  -ms-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
 }
 .slider {
   margin: 0;
@@ -2611,13 +2619,13 @@ a:hover .icon-inteo {
     padding-right: 50px;
   }
 }
-.catalog__category {
+.catalog__category span {
   font: 14px/25px 'GothamPro-Bold';
   letter-spacing: .10em;
   text-transform: uppercase;
+  margin-bottom: 15px;
   display: inline-block;
   vertical-align: top;
-  margin-bottom: 10px;
 }
 .catalog__wrap {
   text-align: justify;
@@ -3024,7 +3032,12 @@ a:hover .icon-inteo {
 .about__head img {
   display: inline-block;
   vertical-align: top;
-  width: 1000px;
+  width: 1140px;
+}
+@media (max-width: 1280px) {
+  .about__head img {
+    width: 1000px;
+  }
 }
 @media (max-width: 1200px) {
   .about__head img {
@@ -3135,10 +3148,8 @@ a:hover .icon-inteo {
   background: #ffd700;
   position: absolute;
   content: '';
-  top: 0;
-  bottom: 0;
+  top: .8em;
   right: -20px;
-  margin: auto 0;
   -webkit-transition: background-color 0.3s ease;
   -moz-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
@@ -3157,7 +3168,7 @@ a:hover .icon-inteo {
   transform: rotate(315deg);
   width: 6px;
   right: -20px;
-  top: 10px;
+  top: .65em;
   -webkit-transition: border-color 0.3s ease;
   -moz-transition: border-color 0.3s ease;
   -o-transition: border-color 0.3s ease;
