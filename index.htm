@@ -14,9 +14,13 @@
     <![endif]-->
     <script src="f/js/jquery-1.11.3.min.js"></script>
     <script src="f/js/jquery.flexslider-min.js"></script>
+    <script src="f/js/jquery.mCustomScrollbar.js"></script>
+    <script src="f/js/dropdowns-enhancement.js"></script>
     <script src="f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
     <link rel="stylesheet" href="f/fancybox/jquery.fancybox.css?v=2.1.5" media="screen">
     <link rel="stylesheet" href="f/css/flexslider.css">
+    <link rel="stylesheet" href="f/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="f/css/dropdowns-enhancement.css">
     <link rel="stylesheet" href="f/css/main.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -205,10 +209,10 @@
   		<div class="switcher catalog">
   			<div class="container">
 	  			<ul class="switcher__control">
-	  				<li class="switcher__btn active" data-switch-btn="buy">Купить
-	  				</li><li class="switcher__btn" data-switch-btn="lease">снять
-	  				</li><li class="switcher__btn" data-switch-btn="sell">Продать
-	  				</li><li class="switcher__btn" data-switch-btn="deliver">сдать</li>
+	  				<li class="switcher__btn btn active" data-switch-btn="buy">Купить
+	  				</li><li class="switcher__btn btn" data-switch-btn="lease">снять
+	  				</li><li class="switcher__btn btn" data-switch-btn="sell">Продать
+	  				</li><li class="switcher__btn btn" data-switch-btn="deliver">сдать</li>
 	  			</ul>
 	  			<div class="switcher__wrap catalog__holder">
 	  				<div class="switcher__holder switcher__holder_active" data-switch-hold="buy">
@@ -384,7 +388,7 @@
 			  					</span>
 			  					<span class="goods__info">
 			  						<span class="goods__control">
-				  						<span><i class="icon-decor"></i></span><span><i class="icon-rub"></i></span><span><i class="icon-percent"></i></span><span><i class="icon-promo"></i></span>
+				  						<span data-toggle="tooltip" title="Отделка"><i class="icon-decor"></i></span><span data-toggle="tooltip" title="Отделка"><i class="icon-rub"></i></span><span data-toggle="tooltip" title="Отделка"><i class="icon-percent"></i></span><span data-toggle="tooltip" title="Отделка"><i class="icon-promo"></i></span>
 				  					</span>
 										<span class="goods__address">
 											<b>ЖК «Тверицкий берег»</b>
@@ -405,7 +409,7 @@
 			  						<b>2-к.кв., Тутаевское шоссе, д.63</b>
 										г. Ярославль, Фрунзенский р-н 
 			  					</span>
-			  					<span class="goods__fav"></span>
+			  					<span class="goods__fav" data-toggle="tooltip" title="Добавить в избранное"></span>
 			  					<span class="goods__price"><b>2 500 000</b> руб.</span>
 			  				</a>
 	  					</div>
@@ -421,7 +425,7 @@
 			  						<b>3-к.кв., ул.Малая Пролетарская, д.28</b>
 										г. Ярославль, Красноперекопский р-н 
 			  					</span>
-			  					<span class="goods__fav"></span>
+			  					<span class="goods__fav" data-toggle="tooltip" title="Добавить в избранное"></span>
 			  					<span class="goods__price"><b>3 700 000</b> руб.</span>
 			  				</a>
 	  					</div>
@@ -439,7 +443,7 @@
 			  						<b>2-к.кв., ул. Доронина, д.10, корп.10</b>
 										г. Ярославль, Фрунзенский р-н 
 			  					</span>
-			  					<span class="goods__fav"></span>
+			  					<span class="goods__fav" data-toggle="tooltip" title="Добавить в избранное"></span>
 			  					<span class="goods__price"><b>2 100 000</b> руб.</span>
 			  				</a>
 	  					</div>
@@ -455,7 +459,7 @@
 			  						<b>3-к.кв.,ул.Малая Пролетарская, д. 28</b>
 										г. Ярославль, Фрунзенский р-н 
 			  					</span>
-			  					<span class="goods__fav"></span>
+			  					<span class="goods__fav" data-toggle="tooltip" title="Добавить в избранное"></span>
 			  					<span class="goods__price"><b>3 100 000</b> руб.</span>
 			  				</a>
 	  					</div>
@@ -471,12 +475,12 @@
 			  						<b>1-к.кв.,  ул. Овинная, д.59</b>
 										г. Ярославль, Фрунзенский р-н 
 			  					</span>
-			  					<span class="goods__fav"></span>
+			  					<span class="goods__fav" data-toggle="tooltip" title="Добавить в избранное"></span>
 			  					<span class="goods__price"><b>1 750 000</b> руб.</span>
 			  				</a>
 	  					</div>
 	  					<div class="col-md-3">
-	  						<a href="#" class="goods__item goods-order">
+	  						<a href="#order" class="goods__item goods-order modal-inline">
   								<span class="goods-order__ico">
   									<img src="f/i/order-icon.png" alt=""> 
   								</span>
@@ -624,9 +628,9 @@
   			<div class="switcher map">
   				<div class="container">
 	  				<ul class="switcher__control switcher__control_grey">
-	  					<li class="switcher__btn active" data-switch-btn="main">Головной офис
-	  					</li><li class="switcher__btn" data-switch-btn="new">Отдел новостроек 
-	  					</li><li class="switcher__btn" data-switch-btn="office">Офис в рыбинске</li>
+	  					<li class="switcher__btn btn active" data-switch-btn="main">Головной офис
+	  					</li><li class="switcher__btn btn" data-switch-btn="new">Отдел новостроек 
+	  					</li><li class="switcher__btn btn" data-switch-btn="office">Офис в рыбинске</li>
 	  				</ul>
   				</div>
   				<div class="switcher__wrap">
@@ -681,12 +685,103 @@
   	</div>
   </footer>
   <div class="popups">
-  	<div class="popup callback-popup form" id="callback">
-  		<div class="popup__row">
-  			<div class="popup__cell">
-  				
-  			</div>
-  		</div>
+  	<div class="container">
+  		<div class="popup form" id="callback">
+	  		<div class="popup__row">
+	  			<div class="popup__cell">
+	  				<div class="form__head">
+	  					<div class="form__head-row">
+	  						<div class="form__head-cell">
+	  							<div class="form__head-img">
+	  								<img src="f/i/order-icon.png" alt="">
+	  							</div>
+	  						</div>
+	  						<div class="form__head-cell">
+	  							<p class="form__head-text">
+			  						<b>Мы перезвоним вам в течении дня!</b>
+			  						Анна Петрова, менеджер по недвижимости
+			  					</p>
+	  						</div>
+	  					</div>
+	  				</div>
+	  				<form id="callback-form" method="post" action="/send/">
+							<div class="row">
+								<div class="col-md-6">
+									<input type="text" class="input valid" placeholder="Ваше имя" name="name" id="name"><label for="name">&nbsp;</label>
+								</div>
+								<div class="col-md-6">
+									<input type="tel" class="input valid" placeholder="+7 (___) ___-__-__" name="phone" id="phone"><label for="phone">&nbsp;</label>
+								</div>
+							</div>
+							<textarea rows="3" class="input" placeholder="Оставьте комментарий, если необходимо" name="comment"></textarea>
+							<div class="form__submit">
+								<button class="btn">Жду звонка!</button>
+							</div>
+						</form>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<div class="popup form " id="order">
+	  		<div class="popup__row">
+	  			<div class="popup__cell">
+	  				<div class="form__head">
+	  					<div class="form__head-row">
+	  						<div class="form__head-cell">
+	  							<div class="form__head-img">
+	  								<img src="f/i/order-icon.png" alt="">
+	  							</div>
+	  						</div>
+	  						<div class="form__head-cell">
+	  							<p class="form__head-text">
+			  						<b>Нужно подобрать или продать недвижимость? Мы Поможем.</b>
+			  						Анна Петрова, менеджер по недвижимости
+			  					</p>
+	  						</div>
+	  					</div>
+	  				</div>
+	  				<form id="order-form" method="post" action="/send/">
+	  					<input type="text" class="input valid" placeholder="Ваше имя" name="name" id="name2"><label for="name">&nbsp;</label>
+							<div class="row">
+								<div class="col-md-6">
+									<input type="tel" class="input valid" placeholder="+7 (___) ___-__-__" name="phone" id="phone2"><label for="phone">&nbsp;</label>
+								</div>
+								<div class="col-md-6">
+									<input type="email" class="input valid" placeholder="Электронная почта" name="email" id="email"><label for="email">&nbsp;</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="dropdown">
+										<button class="dropdown-toggle" data-toggle="dropdown">Что нужно сделать?<i class="caret"></i></button>
+								    <ul class="dropdown-menu">
+								      <li><input id="w1" type="radio" name="what" value="1"><label for="w1">Действие</label></li>
+								      <li><input id="w2" type="radio" name="what" value="2"><label for="w2">Действие2</label></li>
+								    </ul>
+							    </div>
+								</div>
+								<div class="col-md-6">
+									<div class="dropdown">
+										<button class="dropdown-toggle" data-toggle="dropdown" data-label-placement>Тип недвижимости<i class="caret"></i></button>
+								    <ul class="dropdown-menu scroll">
+								      <li><input id="t1" type="radio" name="type" value="1"><label for="t1">Квартира</label></li>
+								      <li><input id="t2" type="radio" name="type" value="2"><label for="t2">Комната</label></li>
+								      <li><input id="t3" type="radio" name="type" value="3"><label for="t3">Коммерческая недвижимость</label></li>
+								      <li><input id="t4" type="radio" name="type" value="4"><label for="t4">Коттедж или дом</label></li>
+								      <li><input id="t5" type="radio" name="type" value="5"><label for="t5">Земельный участок</label></li>
+								      <li><input id="t6" type="radio" name="type" value="6"><label for="t6">Элитная недвижимость</label></li>
+								      <li><input id="t7" type="radio" name="type" value="7"><label for="t7">Гаражи и машиноместа</label></li>
+								    </ul>
+									</div>
+								</div>
+							</div>
+							<textarea rows="2" class="input" placeholder="Оставьте комментарий, если необходимо" name="comment"></textarea>
+							<div class="form__submit">
+								<button class="btn">Отправить</button>
+							</div>
+						</form>
+	  			</div>
+	  		</div>
+	  	</div>
   	</div>
   </div>
 </body>
