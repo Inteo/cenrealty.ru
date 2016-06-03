@@ -239,13 +239,29 @@ $(document).ready(function() {
     	maxHeight = Math.max.apply(null, heights);
     	$(this).find(".news__text").height(maxHeight);
 	});
+	$(".blog__row").each(function(){
+		var heights = $(this).find(".blog__item").map(function ()
+    	{
+        return $(this).outerHeight();
+    	}).get(),
+    	maxHeight = Math.max.apply(null, heights);
+    	$(this).find(".blog__item").each(function(){
+    		var h = maxHeight - $(this).outerHeight();
+
+	  		var text = $(this).find(".blog__text");
+	  		text.height(text.height() + h);
+
+	  		var expert = $(this).find(".blog-expert__holder");
+	  		expert.height(expert.height() + h);
+  	});
+	});
 });
 $(function(){
   $(".js-scroll-link").click(function(){
   	if(!$(this).hasClass("active")) {
 	    var scrollTo = $(this).data("scrollto"),
 	    scrollTarget = $('*[data-scrollto="'+scrollTo+'"].js-scroll-target');
-	    $.scrollTo(scrollTarget, 350, {offset: -50});
+	    $.scrollTo(scrollTarget, 350, {offset: -55});
   	}
   });
  });
