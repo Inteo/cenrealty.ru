@@ -17,6 +17,8 @@
     <script src="f/js/jquery.mCustomScrollbar.js"></script>
     <script src="f/js/dropdowns-enhancement.js"></script>
 		<script src="f/js/jquery-ui.min.js"></script>
+		<script src="f/js/stickyfill.min.js"></script>
+		<script src="f/js/jquery.scrollTo.min.js"></script>
     <script src="f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
     <link rel="stylesheet" href="f/fancybox/jquery.fancybox.css?v=2.1.5" media="screen">
     <link rel="stylesheet" href="f/css/flexslider.css">
@@ -32,15 +34,16 @@
     <script src="f/js/common.js"></script>
     <script>
     	$(document).ready(function(){
+    		$(".sticky-navig").Stickyfill();
      		$('#review-slider').flexslider({
 			    animation: "slide",
 			    controlNav: false,
 			    customDirectionNav: $(".review-slider .flexslider-navigation a")
 			  });
-			  $('#goods-slider').flexslider({
+			  $('#gifts-slider').flexslider({
 			    animation: "slide",
 			    controlNav: false,
-			    customDirectionNav: $(".goods-slider .flexslider-navigation a")
+			    customDirectionNav: $(".gifts-slider .flexslider-navigation a")
 			  });
 			  $(".cart-expert").width($(".col-md-3").width());
 			  $('#how-buy-slider').flexslider({
@@ -188,21 +191,34 @@
 				</div>
 			</div>
 		</header>
-  	<div class="content">
-  		<div class="container">
-  			<ul class="breadcrumbs">
+  	<div class="content">	 		
+			<div class="container">
+				<ul class="breadcrumbs">
 	  			<li><a href="/">Главная</a>
 	  			</li><li><a href="#">Каталог недвижимости</a>
-	  			</li><li><a href="#">Комнаты и квартиры</a></li>
+	  			</li><li><a href="#">Новостройки</a></li>
 	  		</ul>
-	  		<h1 class="left">2-комн.кв., пр-т Фрунзе, д.51</h1>
-				<ul class="print-mail">
-					<li><a href="#"><i class="icon-print"></i></a>
-					</li><li><a href="#"><i class="icon-mail"></i></a>
-					</li><li><a href="#"><i class="icon-fav3"></i></a>
-					</li>
-				</ul>
-				<div class="inner-cart">
+	  		<div class="clearfix">
+	  			<h1 class="left">ЖК «Союзный»</h1>
+					<ul class="print-mail">
+						<li><a href="#"><i class="icon-print"></i></a>
+						</li><li><a href="#"><i class="icon-mail"></i></a>
+						</li><li><a href="#"><i class="icon-fav3"></i></a>
+						</li>
+					</ul>
+	  		</div>
+			</div>
+  		<div class="sticky-navig">
+  			<ul class="sticky-navig__holder container">
+  				<li><a href="#" class="js-scroll-link" data-scrollto="main">Общее описание</a>
+	  			</li><li><a href="#" class="js-scroll-link" data-scrollto="info">Характеристики</a>
+	  			</li><li><a href="#" class="js-scroll-link" data-scrollto="on-map">Объект на карте</a>
+	  			</li><li><a href="#" class="js-scroll-link" data-scrollto="price">Планировки и цены</a>
+	  			</li><li><a href="#" class="js-scroll-link" data-scrollto="buy">Как купить?</a></li>
+  			</ul>
+  		</div>
+  		<div class="container js-scroll-target" data-scrollto="main">
+				<div class="inner-cart inner-cart_new">
 					<div class="inner-cart__wrap">
 						<div class="inner-cart__holder">
 							<div class="inner-cart__cell inner-cart__photo">
@@ -211,7 +227,6 @@
 										<li><a href="#" class="switcher__btn active" data-toggle="tooltip" title="Показать фото" data-switch-btn="photo"><i class="icon-photo"></i></a>
 										</li><li><a href="#" class="switcher__btn" data-toggle="tooltip" title="Показать на карте" data-switch data-switch-btn="map"><i class="icon-map2"></i></a>
 										</li><li><a href="#" class="switcher__btn" data-toggle="tooltip" title="Показать видео" data-switch-btn="video"><i class="icon-video2"></i></a>
-										</li><li><a href="#" class="switcher__btn" data-toggle="tooltip" title="Показать зd изображение" data-switch-btn="3d"><i class="icon-3d"></i></a>
 										</li>
 									</ul>
 									<div class="review-switcher__wrap">
@@ -243,9 +258,6 @@
 										<div class="review-switcher__holder switcher__holder" data-switch-hold="video">
 											3
 										</div>
-										<div class="review-switcher__holder switcher__holder" data-switch-hold="3d">
-											4
-										</div>
 									</div>
 								</div>
 							</div>
@@ -254,16 +266,15 @@
 									<div class="inner-cart__holder">
 										<div class="inner-cart__cell inner-cart__detail">
 											<ul class="lines">
-												<li><span>Раздел</span><span>Продажа</span></li>
-												<li><span>Объект</span><span>Квартира</span></li>
-												<li><span>Район</span><span>Фрунзенский</span></li>
-												<li><span>Количество комнат</span><span>2</span></li>
+												<li><span>Адрес</span><span><a href="#" class="pseudo arrowed-down">г. Ярославль, ул. Маяковского, 15</a></span></li>
+												<li><span>Срок сдачи</span><span><i class="icon-success"></i>Дом сдан</span></li>
 												<li><span>Тип дома</span><span>Кирпичный</span></li>
-												<li><span>Этаж</span><span>1/5</span></li>
-												<li><span>Общая площадь</span><span>57 м<sup>2</sup></span></li>
-												<li><span>Жилая площадь</span><span>45 м<sup>2</sup></span></li>
-												<li><span>Площадь кухни</span><span>12 м<sup>2</sup></span></li>
+												<li><span>Этажность</span><span>16</span></li>
+												<li><span>Отделка</span><span>«Чистовая»</span></li>
 											</ul>
+											<div class="prices">
+												
+											</div>
 										</div>
 										<div class="inner-cart__cell inner-cart__expert cart-expert">
 											<div class="cart-expert__holder">
@@ -275,16 +286,10 @@
 												<p class="cart-expert__phone">8 (4852) 72-82-16</p>
 												<p class="cart-expert__mail">info@cenrealty.ru</p>
 											</div>
-										</div>
-									</div>
-									<div class="inner-cart__holder">
-										<div class="inner-cart__cell inner-cart__price">
-											<span><b>1 750 000</b> руб.</span>
-											<p>ипотека, жилье в зачет</p>
-										</div>
-										<div class="inner-cart__cell inner-cart__btns">
-											<a href="#" class="cart-expert__order btn">Заявка на просмотр</a>
-											<a href="#" class="cart-expert__qst btn btn-white">Задать вопрос</a>	
+											<div class="cart-expert__btns">
+												<a href="#" class="cart-expert__order btn">Заявка на просмотр</a>
+												<a href="#" class="cart-expert__qst btn btn-white">Задать вопрос</a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -306,32 +311,96 @@
 			  		<span class="inner-cart__status-value">ID объекта: N002660</span>
 					</div>
 				</div>
-				<div class="inner-cart-about">
+				<div class="inner-cart-about js-scroll-target" data-scrollto="info">
 					<div class="row">
 						<div class="col-md-9">
 							<div class="inner-cart-about__wrap">
-								<div class="inner-cart-about__holder">
-									<p class="inner-cart-about__title">Описание
-									</p><p class="inner-cart-about__content">Продается хорошая 2-х комн. квартира. в пос. (Парижская коммуна). Спокойное и тихое место. Вся инфраструктура рядом, 3 мин. до остановки транспорта. В хорошем состоянии. Сделан косметический ремонт, поставлена новая сантехника. Новая колонка-автомат. Заменена электропроводка и счетчики.</p>
+								<div class="inner-cart-about__holder inner-cart-about__holder_unborder">
+									<div class="gifts">
+										<div class="slider gifts-slider" id="gifts-slider">
+											<ul class="slides">
+												<li>
+													<div class="iconized-text iconized-text_small"><span><span><img src="f/i/about/3.png" alt=""></span><span><b>Дарим подарки</b>Только до конца мая ни один клиент не уйдет от нас без приятного и полезного подарка на будущее новоселье<i><i>Акция действует до 25 мая</i><a href="#" data-toggle="tooltip" title="О сроках проведения, организаторе, правилах, количестве товара, месте и порядке приобретения, вы можете узнать по телефону (4852) 72-82-16. Количество ограничено." class="pseudo iconize-qst">Условия акции</a></i></span></span></div>
+												</li>
+												<li>
+													<div class="iconized-text iconized-text_small"><span><span><img src="f/i/about/3.png" alt=""></span><span><b>Дарим подарки</b>Только до конца мая ни один клиент не уйдет от нас без приятного и полезного подарка на будущее новоселье<i><i>Акция действует до 25 мая</i><a href="#" data-toggle="tooltip" title="О сроках проведения, организаторе, правилах, количестве товара, месте и порядке приобретения, вы можете узнать по телефону (4852) 72-82-16. Количество ограничено." class="pseudo iconize-qst">Условия акции</a></i></span></span></div>
+												</li>
+												<li>
+													<div class="iconized-text iconized-text_small"><span><span><img src="f/i/about/3.png" alt=""></span><span><b>Дарим подарки</b>Только до конца мая ни один клиент не уйдет от нас без приятного и полезного подарка на будущее новоселье<i><i>Акция действует до 25 мая</i><a href="#" data-toggle="tooltip" title="О сроках проведения, организаторе, правилах, количестве товара, месте и порядке приобретения, вы можете узнать по телефону (4852) 72-82-16. Количество ограничено." class="pseudo iconize-qst">Условия акции</a></i></span></span></div>
+												</li>
+											</ul>
+											<div class="flexslider-navigation">
+							  				<a href="#" class="flex-prev">&nbsp;</a>
+							  				<a href="#" class="flex-next">&nbsp;</a>
+							  			</div>
+										</div>
+									</div>
 								</div>
 								<div class="inner-cart-about__holder">
-									<p class="inner-cart-about__title">Характеристики
+									<p class="inner-cart-about__title">Преимущества
+									</p><p class="inner-cart-about__content inner-cart-about__content_small">Территория размещения жилого комплекса – Заволжский район, Северо-восточная, самая зеленая часть города Ярославля, в 1,5 км от левого берега реки Волга, в непосредственной близости от Тверицкого бора и реки Урочь. Построенный пешеходный мост на реке Урочь и существующие зеленые насаждения на территории жилого комплекса образуют единое зеленое пространство с Тверицким бором. Уникальное сочетание транспортной доступности и прекрасного природного окружения позволили создать жилой комплекс, отвечающий всем современным требованиям к качественной и комфортной жилой среде.</p>
+								</div>
+								<div class="inner-cart-about__holder">
+									<p class="inner-cart-about__title">Описание
+									</p><div class="inner-cart-about__content inner-cart-about__content_small"><p>В основе архитектурно-планировочной концепции жилого комплекса заложена идея современной интерпретации традиционной застройки, характерной для исторических центров многих европейских городов и городов России.</p>Жилой комплекс имеет свою яркую индивидуальность в объемно-пространственном решении и проработке фасадов, композиция в плане представляет собой форму подковы с высотной 17-этажной частью в центре с каскадным понижением этажности до 13, 10, 7, 4 этажей к ее периферии. Центральная часть композиции заканчивается куполом.</div>
+								</div>
+								<div class="inner-cart-about__holder">
+									<p class="inner-cart-about__title">Отделочные работы
+									</p><div class="inner-cart-about__content inner-cart-about__content_small"><p>Квартиры продаются с отделкой «под чистовую».</p>
+									<ul class="iconed-list">
+										<li>
+											<i class="icon-success"></i>Поквартирное автономное газовое отопление;
+										</li>
+										<li>
+											<i class="icon-success"></i>Окна ПВХ (пятикамерный профиль, двухкамерный стеклопакет);
+										</li>
+										<li>
+											<i class="icon-success"></i>Возможна перепланировка до момента возведения межкомнатных перегородок, перегородки - из кирпича, штукатурка.
+										</li>
+									</ul>
+									</div>
+								</div>
+								<div class="inner-cart-about__holder">
+									<p class="inner-cart-about__title">территория вокруг дома
+									</p><div class="inner-cart-about__content inner-cart-about__content_small">Безопасность комплекса по всему периметру будет обеспечиваться благодаря огороженной территории, а также круглосуточному видеонаблюдению. Доступ на территорию комплекса, паркинга и в подъезды будет осуществляться посредством индивидуальных электронных ключей.</div>
+								</div>
+								<div class="inner-cart-about__holder">
+									<p class="inner-cart-about__title">Ход строительства
 									</p><div class="inner-cart-about__content">
-										<div class="inner-cart-about__col">
-											<ul class="lines">
-												<li><span>Объект</span><span>Квартира</span></li>
-												<li><span>Район</span><span>Фрунзенский</span></li>
-												<li><span>Количество комнат</span><span>2</span></li>
-												<li><span>Тип дома</span><span>Кирпичный</span></li>
-												<li><span>Этаж</span><span>1/5</span></li>
+										<div class="inner-cart-about__photos">
+											<ul>
+												<li>
+													<a href="#">
+														<span class="inner-cart-about__photos-img">
+															<img src="f/i/progress/1.jpg" alt="">
+														</span>
+														<span class="inner-cart-about__photos-date">16 апреля 2016</span>
+													</a>
+												</li><li>
+													<a href="#">
+														<span class="inner-cart-about__photos-img">
+															<img src="f/i/progress/2.jpg" alt="">
+														</span>
+														<span class="inner-cart-about__photos-date">5 марта 2016</span>
+													</a>
+												</li><li>
+													<a href="#">
+														<span class="inner-cart-about__photos-img">
+															<img src="f/i/progress/3.jpg" alt="">
+														</span>
+														<span class="inner-cart-about__photos-date">13 декабря 2015</span>
+													</a>
+												</li>
 											</ul>
-										</div><div class="inner-cart-about__col">
-											<ul class="lines">
-												<li><span>Общая площадь</span><span>57 м<sup>2</sup></span></li>
-												<li><span>Жилая площадь</span><span>45 м<sup>2</sup></span></li>
-												<li><span>Площадь кухни</span><span>12 м<sup>2</sup></span></li>
-											</ul>
+											<a href="#" class="pseudo inner-cart-about__photos-more">Показать еще</a>
 										</div>
+									</div>
+								</div>
+								<div class="inner-cart-about__holder inner-cart-about__holder_unborder">
+									<p class="inner-cart-about__title">Документация
+									</p><div class="inner-cart-about__content">
+										<a href="#" class="iconized-text iconized-text_file"><span><span><img src="f/i/doc.png" alt=""></span><span><b>Проектная декларация</b><i>.doc, 150 Кб</i></span></span></a>
+										<a href="#" class="iconized-text iconized-text_bot iconized-text_file"><span><span><img src="f/i/doc.png" alt=""></span><span><b>Разрешение на строительство</b><i>.doc, 150 Кб</i></span></span></a>
 									</div>
 								</div>
 							</div>
@@ -339,35 +408,179 @@
 						<div class="col-md-3">
 							<div class="inner-cart-about__control">
 								<div class="info-panel">
-									<a href="#" class="info-panel__item info-panel__item_moving info-panel__item_moving_blue">
+									<a href="#" class="info-panel__item info-panel__item_moving">
 										<span class="info-panel__caption">Переезжающим <br>в ярославль</span>
-										<span class="info-panel__img"><img src="f/i/moving2.jpg" alt=""></span>
+										<span class="info-panel__img"><img src="f/i/moving.jpg" alt=""></span>
 									</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="inner-cart-about">
-					<div class="row">
-						<div class="col-md-9">
-							<div class="inner-cart-about__wrap">
-								<div class="inner-cart-about__holder inner-cart-about__holder_unborder">
-									<p class="inner-cart-about__title">Расположение <br>на карте
-									</p><div class="inner-cart-about__content"><div class="inner-cart-about__map" id="map"></div></div>
+			</div>
+			<section class="where js-scroll-target" data-scrollto="on-map">
+				<div class="container">
+  				<div class="section">
+						<h2 class="left">Как купить квартиру? — Легко!</h2>
+						<span class="where__on-map"><a href="#">г. Ярославль, ул. Маяковского, 15</a></span>
+							<div class="row">
+								<div class="col-md-9">
+									<div class="where__map"><div class="where__map-holder" id="map"></div></div>
+									<div class="inner-cart-about">
+										<div class="inner-cart-about__holder">
+											<p class="inner-cart-about__title">Что полезного есть рядом
+											</p><div class="inner-cart-about__content inner-cart-about__content_small"><p>Помимо жилых квартир в состав комплекса входят все необходимые объекты социальной инфраструктуры.</p>
+												<div class="row">
+													<div class="col-md-6">
+														<ul class="iconed-list">
+															<li><i class="icon-success"></i>Детский сад и ясли</li>
+															<li><i class="icon-success"></i>2 оздоровительных  центра</li>
+															<li><i class="icon-success"></i>Супермаркет</li>
+															<li><i class="icon-success"></i>Салон красоты</li>
+														</ul>
+													</div><div class="col-md-6">
+														<ul class="iconed-list">
+															<li><i class="icon-success"></i>Аптека</li>
+															<li><i class="icon-success"></i>Кафе</li>
+															<li><i class="icon-success"></i>Турагентство</li>
+															<li><i class="icon-success"></i>Школа бокса</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="inner-cart-about__holder inner-cart-about__holder_unborder">
+											<p class="inner-cart-about__title">Как добраться
+											</p><div class="inner-cart-about__content inner-cart-about__content_small">Жилой комплекс располагается в 10 минутах езды на автотранспорте от центральной части г. Ярославля. Въезд на территорию осуществляется с автомагистрали по ул. Маяковского. Напротив, в 100 метрах от объекта, расположена остановка общественного транспорта, автобус № 22, 35, маршрутное такси № 38. Практически закончено восстановление парка площадью 2 Га с прогулочными дорожками для колясок, велосипедов и роликов, а так же футбольное поле.</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="region-help where__help">
+	  								<div class="region-help__ico">
+	  									<img src="f/i/help2.png" alt=""> 
+	  								</div>
+	  								<p class="region-help__text">«Не знаете как добраться? — Не проблема. Встретим и довезем»</p>
+	  								<p class="region-help__name">
+	  									Сергей Петров
+	  									<span>директор отдела «Новостройки»</span>
+	  								</p>
+	  								<span class="region-help__btn btn">Поехали!</span>
+		  						</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</section>
+			<div class="prices js-scroll-target" data-scrollto="price">
+				<div class="container">
+  				<div class="section">
+						<h2>Планировки и цены</h2>
+						<a href="#" class="iconized-text iconized-text_file"><span><span><img src="f/i/pdf.png" alt=""></span><span><b class="arrowed">Планировки этажей</b><i>.pdf, 1,2 Мб</i></span></span></a>
+						<div class="prices-table">
+							<div class="prices-table__row prices-table__row_head">
+								<div class="prices-table__cell">План</div>
+								<div class="prices-table__cell">Этаж</div>
+								<div class="prices-table__cell">Комнаты</div>
+								<div class="prices-table__cell">Площадь</div>
+								<div class="prices-table__cell">Цена за м<sup>2</sup></div>
+								<div class="prices-table__cell">Стоимость<i class="icon-sort"></i></div>
+								<div class="prices-table__cell">Заявка на просмотр</div>
+							</div>
+							<a href="#" class="prices-table__row">
+								<span class="prices-table__cell" data-toggle="tooltip" title="Посмотреть планировку"></span>
+								<span class="prices-table__cell">1-16 <span>этаж</span></span>
+								<span class="prices-table__cell">1<span>-комн.</span></span>
+								<span class="prices-table__cell">41 <span>м<sup>2</sup></span></span>
+								<span class="prices-table__cell">38 900<span> руб. за м<sup>2</sup></span></span>
+								<span class="prices-table__cell">1 450 000<span> руб.</span></span>
+								<span class="prices-table__cell prices-table__cell_detail">Посмотреть квартиру</span>
+							</a>
+							<a href="#" class="prices-table__row">
+								<span class="prices-table__cell" data-toggle="tooltip" title="Посмотреть планировку"></span>
+								<span class="prices-table__cell">1-16 <span>этаж</span></span>
+								<span class="prices-table__cell">1<span>-комн.</span></span>
+								<span class="prices-table__cell">41 <span>м<sup>2</sup></span></span>
+								<span class="prices-table__cell">38 900<span> руб. за м<sup>2</sup></span></span>
+								<span class="prices-table__cell">1 450 000<span> руб.</span></span>
+								<span class="prices-table__cell prices-table__cell_detail">Посмотреть квартиру</span>
+							</a>
+							<a href="#" class="prices-table__row">
+								<span class="prices-table__cell" data-toggle="tooltip" title="Посмотреть планировку"></span>
+								<span class="prices-table__cell">1-16 <span>этаж</span></span>
+								<span class="prices-table__cell">1<span>-комн.</span></span>
+								<span class="prices-table__cell">41 <span>м<sup>2</sup></span></span>
+								<span class="prices-table__cell">38 900<span> руб. за м<sup>2</sup></span></span>
+								<span class="prices-table__cell">1 450 000<span> руб.</span></span>
+								<span class="prices-table__cell prices-table__cell_detail">Посмотреть квартиру</span>
+							</a>
+							<a href="#" class="prices-table__row">
+								<span class="prices-table__cell" data-toggle="tooltip" title="Посмотреть планировку"></span>
+								<span class="prices-table__cell">1-16 <span>этаж</span></span>
+								<span class="prices-table__cell">1<span>-комн.</span></span>
+								<span class="prices-table__cell">41 <span>м<sup>2</sup></span></span>
+								<span class="prices-table__cell">38 900<span> руб. за м<sup>2</sup></span></span>
+								<span class="prices-table__cell">1 450 000<span> руб.</span></span>
+								<span class="prices-table__cell prices-table__cell_detail">Посмотреть квартиру</span>
+							</a>
+							<a href="#" class="prices-table__row">
+								<span class="prices-table__cell" data-toggle="tooltip" title="Посмотреть планировку"></span>
+								<span class="prices-table__cell">1-16 <span>этаж</span></span>
+								<span class="prices-table__cell">1<span>-комн.</span></span>
+								<span class="prices-table__cell">41 <span>м<sup>2</sup></span></span>
+								<span class="prices-table__cell">38 900<span> руб. за м<sup>2</sup></span></span>
+								<span class="prices-table__cell">1 450 000<span> руб.</span></span>
+								<span class="prices-table__cell prices-table__cell_detail">Посмотреть квартиру</span>
+							</a>
+							<a href="#" class="prices-table__row">
+								<span class="prices-table__cell" data-toggle="tooltip" title="Посмотреть планировку"></span>
+								<span class="prices-table__cell">1-16 <span>этаж</span></span>
+								<span class="prices-table__cell">1<span>-комн.</span></span>
+								<span class="prices-table__cell">41 <span>м<sup>2</sup></span></span>
+								<span class="prices-table__cell">38 900<span> руб. за м<sup>2</sup></span></span>
+								<span class="prices-table__cell">1 450 000<span> руб.</span></span>
+								<span class="prices-table__cell prices-table__cell_detail">Посмотреть квартиру</span>
+							</a>
+						</div>
+						<div class="inner-cart-about">
+							<div class="row">
+								<div class="col-md-9">
+									<div class="inner-cart-about__holder">
+										<p class="inner-cart-about__title">Ипотека
+										</p><div class="inner-cart-about__content inner-cart-about__content_small"><p>Имеется аккредитация в надежных банках. Запишитесь к нам на консультацию и мы поможем вам подобрать ипотеку.</p>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="inner-cart-about__bank">
+													<div class="inner-cart-about__bank-ico">
+														<img src="f/i/bank1.png" alt="">
+													</div>
+													<p>ПАО «Сбербанк России»</p>
+													<i>Генеральная лицензия на осуществление банковских операций от 11 августа 2015 года. Регистрационный номер — 1481.</i>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="inner-cart-about__bank">
+													<div class="inner-cart-about__bank-ico">
+														<img src="f/i/bank2.png" alt="">
+													</div>
+													<p>ПАО «Инвестторгбанк»</p>
+													<i>Генеральная лицензия на осуществление банковских операций от 11 августа 2015 года. Регистрационный номер — 2763.</i>
+												</div>
+											</div>
+										</div>
+										</div>
+									</div>
+									<div class="inner-cart-about__holder inner-cart-about__holder_unborder">
+										<p class="inner-cart-about__title">Рассрочка
+										</p><div class="inner-cart-about__content inner-cart-about__content_small">Возможно приобретение квартир с рассрочкой до ввода дома в эксплуатацию. Оформление квартир осуществляется через приобретение пая в виде квартиры в Жилищно-строительном кооперативе.</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-3">
-							<div class="inner-cart-about__control inner-cart-about__control_map">
-								<a href="#" class="iconized-text"><span><span><i class="icon-new"></i></span><span><b>Новостройки <br>Ярославля</b></span></span></a>
-								<a href="#" class="iconized-text"><span><span><i class="icon-village"></i></span><span><b>Коттеджные <br>поселки</b></span></span></a>
-							</div>
-						</div>
-					</div>
-				</div>
-  		</div>
-  		<section class="how-buy">
+  				</div>
+  			</div>
+			</div>
+  		<section class="how-buy js-scroll-target" data-scrollto="buy">
   			<div class="container">
   				<div class="section">
 						<h2>Как купить квартиру? — Легко!</h2>
@@ -442,157 +655,6 @@
 							</div>
 						</div>
 						
-  				</div>
-  			</div>
-  		</section>
-  		<section class="goods-slider goods">
-  			<div class="container">
-  				<div class="section section_top">
-						<h2>Похожие квартиры</h2>
-						<div id="goods-slider" class="goods-slider__holder slider">
-							<ul class="slides">
-								<li>
-									<div class="row goods__row">
-										<div class="col-md-3">
-											<a href="#" class="goods__item">
-						  					<span class="goods__img">
-						  						<img src="f/i/goods/3.jpg" alt="">
-						  					</span>
-						  					<span class="goods__num">
-						  						<span><b>2</b> комн.</span><span><b>1</b> из 9 эт.</span><span><b>43</b> м<sup>2</sup></span>
-						  					</span>
-						  					<span class="goods__address">
-						  						<b>2-к.кв., ул. Доронина, д.10, корп.10</b>
-													г. Ярославль, Фрунзенский р-н 
-						  					</span>
-						  					<span class="goods__fav fav" data-toggle="tooltip" title="Добавить в избранное"></span>
-						  					<span class="goods__price"><b>2 100 000</b> руб.</span>
-						  				</a>
-										</div>
-										<div class="col-md-3">
-											<a href="#" class="goods__item">
-						  					<span class="goods__img">
-						  						<img src="f/i/goods/4.jpg" alt="">
-						  					</span>
-						  					<span class="goods__num">
-						  						<span><b>3</b> комн.</span><span><b>3</b> из 9 эт.</span><span><b>57</b> м<sup>2</sup></span>
-						  					</span>
-						  					<span class="goods__address">
-						  						<b>3-к.кв.,ул.Малая Пролетарская, д. 28</b>
-													г. Ярославль, Фрунзенский р-н 
-						  					</span>
-						  					<span class="goods__fav fav" data-toggle="tooltip" title="Добавить в избранное"></span>
-						  					<span class="goods__price"><b>3 100 000</b> руб.</span>
-						  				</a>
-										</div>
-										<div class="col-md-3">
-											<a href="#" class="goods__item">
-						  					<span class="goods__img">
-						  						<img src="f/i/goods/5.jpg" alt="">
-						  					</span>
-						  					<span class="goods__num">
-						  						<span><b>1</b> комн.</span><span><b>6</b> из 10 эт.</span><span><b>32</b> м<sup>2</sup></span>
-						  					</span>
-						  					<span class="goods__address">
-						  						<b>1-к.кв.,  ул. Овинная, д.59</b>
-													г. Ярославль, Фрунзенский р-н 
-						  					</span>
-						  					<span class="goods__fav fav" data-toggle="tooltip" title="Добавить в избранное"></span>
-						  					<span class="goods__price"><b>1 750 000</b> руб.</span>
-						  				</a>
-										</div>
-										<div class="col-md-3">
-											<a href="#" class="goods__item">
-						  					<span class="goods__img">
-						  						<img src="f/i/goods/3.jpg" alt="">
-						  					</span>
-						  					<span class="goods__num">
-						  						<span><b>2</b> комн.</span><span><b>1</b> из 9 эт.</span><span><b>43</b> м<sup>2</sup></span>
-						  					</span>
-						  					<span class="goods__address">
-						  						<b>2-к.кв., ул. Доронина, д.10, корп.10</b>
-													г. Ярославль, Фрунзенский р-н 
-						  					</span>
-						  					<span class="goods__fav fav" data-toggle="tooltip" title="Добавить в избранное"></span>
-						  					<span class="goods__price"><b>2 100 000</b> руб.</span>
-						  				</a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="row goods__row">
-										<div class="col-md-3">
-											<a href="#" class="goods__item">
-						  					<span class="goods__img">
-						  						<img src="f/i/goods/3.jpg" alt="">
-						  					</span>
-						  					<span class="goods__num">
-						  						<span><b>2</b> комн.</span><span><b>1</b> из 9 эт.</span><span><b>43</b> м<sup>2</sup></span>
-						  					</span>
-						  					<span class="goods__address">
-						  						<b>2-к.кв., ул. Доронина, д.10, корп.10</b>
-													г. Ярославль, Фрунзенский р-н 
-						  					</span>
-						  					<span class="goods__fav fav" data-toggle="tooltip" title="Добавить в избранное"></span>
-						  					<span class="goods__price"><b>2 100 000</b> руб.</span>
-						  				</a>
-										</div>
-										<div class="col-md-3">
-											<a href="#" class="goods__item">
-						  					<span class="goods__img">
-						  						<img src="f/i/goods/4.jpg" alt="">
-						  					</span>
-						  					<span class="goods__num">
-						  						<span><b>3</b> комн.</span><span><b>3</b> из 9 эт.</span><span><b>57</b> м<sup>2</sup></span>
-						  					</span>
-						  					<span class="goods__address">
-						  						<b>3-к.кв.,ул.Малая Пролетарская, д. 28</b>
-													г. Ярославль, Фрунзенский р-н 
-						  					</span>
-						  					<span class="goods__fav fav" data-toggle="tooltip" title="Добавить в избранное"></span>
-						  					<span class="goods__price"><b>3 100 000</b> руб.</span>
-						  				</a>
-										</div>
-										<div class="col-md-3">
-											<a href="#" class="goods__item">
-						  					<span class="goods__img">
-						  						<img src="f/i/goods/5.jpg" alt="">
-						  					</span>
-						  					<span class="goods__num">
-						  						<span><b>1</b> комн.</span><span><b>6</b> из 10 эт.</span><span><b>32</b> м<sup>2</sup></span>
-						  					</span>
-						  					<span class="goods__address">
-						  						<b>1-к.кв.,  ул. Овинная, д.59</b>
-													г. Ярославль, Фрунзенский р-н 
-						  					</span>
-						  					<span class="goods__fav fav" data-toggle="tooltip" title="Добавить в избранное"></span>
-						  					<span class="goods__price"><b>1 750 000</b> руб.</span>
-						  				</a>
-										</div>
-										<div class="col-md-3">
-											<a href="#" class="goods__item">
-						  					<span class="goods__img">
-						  						<img src="f/i/goods/3.jpg" alt="">
-						  					</span>
-						  					<span class="goods__num">
-						  						<span><b>2</b> комн.</span><span><b>1</b> из 9 эт.</span><span><b>43</b> м<sup>2</sup></span>
-						  					</span>
-						  					<span class="goods__address">
-						  						<b>2-к.кв., ул. Доронина, д.10, корп.10</b>
-													г. Ярославль, Фрунзенский р-н 
-						  					</span>
-						  					<span class="goods__fav fav" data-toggle="tooltip" title="Добавить в избранное"></span>
-						  					<span class="goods__price"><b>2 100 000</b> руб.</span>
-						  				</a>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<div class="flexslider-navigation">
-			  				<a href="#" class="flex-prev">&nbsp;</a>
-			  				<a href="#" class="flex-next">&nbsp;</a>
-			  			</div>
-						</div>
   				</div>
   			</div>
   		</section>

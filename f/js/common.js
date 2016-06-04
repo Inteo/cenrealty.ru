@@ -124,7 +124,7 @@ $.fn.tooltip.defaults={animation:true,placement:'top',selector:false,template:'<
 function sticky() {
 		var initial = $(document).scrollTop(),
     anchor = '',
-    margin = 70;
+    margin = 55;
 
 		$.each(scrollTargets, function(JIndex, JElement) {
 		        initial >= JElement - margin && (anchor = JIndex);
